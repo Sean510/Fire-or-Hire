@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+
+        <!-- bootstrap dependencies-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+
+        <!-- handlebars library-->
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+        <script src="spa_app_demo.js"></script>
+    </head>
+    <body>
+
+        <div class="container h-100">
+            <div class="row align-items-center h-100">
+                <div class="col-6 mx-auto">
+
+                    <div id="app_widget" class="align-items-center">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- View -->
+
+
+        <script id="post_view2" type="text/x-handlebars-template">
+            <h4> Assess this post </h4>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="card" style="width:200px">
+                            <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png}}" alt="Card">
+                            <div class="card-body">
+                                <h4 class="card-title">{{first_name}}</h4>
+                                <p class="card-text">Some example text.</p>
+                                <a href="#" class="btn btn-primary">See Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+
+        <script id="user_view" type="text/x-handlebars-template">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="counter">
+                            <i class="fa fa-lighbulb-o fa-2x"></i>
+                            <h2 class="timer count-title count-number">{{this.current_hire}}</h2>
+                            <p class="count-text">People Hired</p>
+                        </div>
+                        <div class="counter">
+                            <i class="fa fa-bug fa-2x"></i>
+                            <h2 class="timer count-title count-number">{{this.current_fire}}</h2>
+                            <p class="count-text">People Fired</p>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width:350px">
+                            <h4 class="text-center"> Hire or Fire?</h4>
+                            <img class="card-img-top" src="{{this.results.0.picture.large}}" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">{{this.results.0.name.title}} {{this.results.0.name.first}} {{this.results.0.name.last}}</h4>
+                            </div>
+                                <button class="btn btn-primary pull-left" data-vote="hire">Hire</button>
+                                <button class="btn btn-danger float-right" data-vote="fire">Fire</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+    </body>
+</html>    
